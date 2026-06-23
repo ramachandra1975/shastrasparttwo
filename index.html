@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>शास्त्रोद्भवः · Classical Śāstras — Part II | Cultural Musings</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#c9a86a;--gold-bright:#e8cb8a;--crimson:#7a1f2b;--crimson-bright:#9c2c3a;
+  --bg:#0e0a08;--panel:#17120f;--panel-2:#1d1713;--border:#3a2e22;
+  --text:#e8ddc8;--text-dim:#a89884;--text-faint:#7a6c5a;
+  --cream:#f3ead6;--saffron:#d9883f;--indigo:#3d4a6b;--jade:#2e6b4f;--jade-bright:#4a9e77;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'EB Garamond',serif;font-size:18px;line-height:1.75;
+  background-image:radial-gradient(ellipse at top left,rgba(122,31,43,0.08),transparent 60%),radial-gradient(ellipse at bottom right,rgba(201,168,106,0.06),transparent 60%);}
+.dn{font-family:'Noto Serif Devanagari',serif;}
+h1,h2,h3,h4,.display{font-family:'Cinzel',serif;letter-spacing:0.02em;}
+.cg{font-family:'Cormorant Garamond',serif;}
+.app{display:flex;min-height:100vh;}
+.sidebar{width:280px;flex-shrink:0;background:linear-gradient(180deg,#120d0a,#0a0706);border-right:1px solid var(--border);position:sticky;top:0;height:100vh;overflow-y:auto;padding:28px 0 40px;}
+.sidebar::-webkit-scrollbar{width:6px;}
+.sidebar::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px;}
+.brand{padding:0 24px 22px;border-bottom:1px solid var(--border);margin-bottom:18px;}
+.brand .om{font-size:34px;color:var(--gold-bright);display:block;margin-bottom:6px;}
+.brand h1{font-size:14px;color:var(--cream);line-height:1.35;letter-spacing:0.04em;}
+.brand p{font-family:'Cormorant Garamond',serif;font-size:12px;color:var(--text-faint);margin-top:6px;font-style:italic;}
+.navgroup{margin-bottom:4px;}
+.navgroup .label{font-size:10px;text-transform:uppercase;letter-spacing:0.14em;color:var(--text-faint);padding:12px 24px 5px;}
+.navlink{display:block;padding:8px 24px;color:var(--text-dim);text-decoration:none;font-size:13.5px;border-left:2px solid transparent;transition:all .15s ease;cursor:pointer;}
+.navlink:hover{color:var(--gold-bright);background:rgba(201,168,106,0.05);}
+.navlink.active{color:var(--gold-bright);border-left-color:var(--crimson-bright);background:rgba(122,31,43,0.12);}
+.series-nav{margin:16px 24px 0;padding:14px 16px;background:rgba(201,168,106,0.05);border:1px solid var(--border);border-radius:5px;}
+.series-nav .sn-label{font-family:'Cinzel';font-size:9.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--saffron);margin-bottom:8px;}
+.series-nav a{display:block;font-size:12.5px;color:var(--text-faint);text-decoration:none;padding:3px 0;transition:color .15s;}
+.series-nav a:hover{color:var(--gold-bright);}
+.series-nav a.current{color:var(--gold-bright);font-weight:600;}
+.main{flex:1;min-width:0;}
+.breadcrumb{position:sticky;top:0;z-index:30;background:rgba(14,10,8,0.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:12px 40px;font-size:13px;color:var(--text-faint);display:flex;align-items:center;gap:8px;}
+.breadcrumb span.cur{color:var(--gold);}
+.tabbar{position:sticky;top:41px;z-index:29;display:flex;overflow-x:auto;background:var(--panel);border-bottom:1px solid var(--border);-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--gold) var(--panel);}
+.tabbar::-webkit-scrollbar{height:4px;}
+.tabbar::-webkit-scrollbar-thumb{background:var(--gold);border-radius:4px;}
+.tabbtn{flex-shrink:0;padding:12px 18px;font-size:13px;color:var(--text-dim);background:none;border:none;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;font-family:'EB Garamond',serif;letter-spacing:0.03em;}
+.tabbtn:hover{color:var(--gold-bright);}
+.tabbtn.active{color:var(--gold-bright);border-bottom-color:var(--crimson-bright);background:rgba(122,31,43,0.08);}
+.section{padding:52px 56px 70px;max-width:1160px;}
+.section.hidden{display:none;}
+.eyebrow{font-family:'Cinzel';font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--saffron);margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+.eyebrow::before{content:'';width:28px;height:1px;background:var(--saffron);}
+h2.title{font-size:32px;color:var(--cream);margin-bottom:8px;line-height:1.25;}
+h2.title .dn{color:var(--gold-bright);display:block;font-size:28px;margin-bottom:6px;}
+.lede{font-family:'Cormorant Garamond';font-size:20px;color:var(--text-dim);font-style:italic;max-width:780px;margin:16px 0 34px;line-height:1.65;}
+.panel{background:var(--panel);border:1px solid var(--border);border-radius:6px;padding:24px 28px;margin-bottom:22px;}
+.panel h3{color:var(--gold-bright);font-size:17px;margin-bottom:12px;letter-spacing:0.02em;}
+.panel h4{color:var(--text);font-size:15px;margin:16px 0 8px;font-family:'Cinzel';}
+p{margin-bottom:14px;}
+p:last-child{margin-bottom:0;}
+.sanskrit-block{font-family:'Noto Serif Devanagari';font-size:21px;color:var(--cream);background:var(--panel-2);border-left:3px solid var(--crimson-bright);padding:15px 22px;margin:18px 0;border-radius:0 4px 4px 0;line-height:1.9;}
+.iast{font-family:'Cormorant Garamond';font-style:italic;color:var(--gold);font-size:16.5px;}
+.gloss{color:var(--text-dim);font-size:15px;margin-top:6px;}
+blockquote{border-left:3px solid var(--gold);padding:10px 20px;margin:18px 0;font-family:'Cormorant Garamond';font-style:italic;font-size:18.5px;color:var(--text);background:rgba(201,168,106,0.04);}
+blockquote cite{display:block;margin-top:8px;font-size:13px;color:var(--text-faint);font-style:normal;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+@media(max-width:900px){.grid2,.grid3{grid-template-columns:1fr;}}
+table.chron{width:100%;border-collapse:collapse;margin:18px 0;font-size:15px;}
+table.chron thead tr{background:rgba(122,31,43,0.18);}
+table.chron th{text-align:left;color:var(--gold-bright);font-family:'Cinzel';font-size:11px;letter-spacing:0.06em;text-transform:uppercase;padding:11px 14px;border-bottom:2px solid var(--crimson);}
+table.chron td{padding:10px 14px;border-bottom:1px solid rgba(58,46,34,0.5);color:var(--text-dim);vertical-align:top;}
+table.chron tr:hover td{background:rgba(201,168,106,0.03);}
+table.chron td.era{color:var(--saffron);font-family:'Cinzel';font-size:12.5px;white-space:nowrap;}
+table.chron td.shastra{color:var(--gold-bright);font-weight:600;}
+table.chron td.note{font-size:14px;color:var(--text-faint);}
+.callout{border:1px solid var(--gold);border-radius:6px;padding:20px 24px;margin:20px 0;background:rgba(201,168,106,0.04);}
+.callout .cl-head{font-family:'Cinzel';font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-bright);margin-bottom:8px;}
+.tag{display:inline-block;font-size:10.5px;letter-spacing:0.06em;text-transform:uppercase;padding:2px 8px;border-radius:3px;border:1px solid var(--border);color:var(--text-faint);margin-right:6px;margin-bottom:4px;}
+.tag.veda{border-color:var(--crimson);color:var(--crimson-bright);}
+.tag.gold{border-color:var(--gold);color:var(--gold-bright);}
+.tag.jade{border-color:var(--jade);color:var(--jade-bright);}
+.tag.indigo{border-color:var(--indigo);color:#8fa3d9;}
+.darshana-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:20px 0;}
+.darshana-card{background:var(--panel-2);border:1px solid var(--border);border-radius:6px;padding:18px 16px;}
+.darshana-card .dc-name{font-family:'Cinzel';font-size:13px;color:var(--gold-bright);margin-bottom:4px;}
+.darshana-card .dc-dn{font-family:'Noto Serif Devanagari';font-size:18px;color:var(--cream);display:block;margin-bottom:6px;}
+.darshana-card .dc-pair{font-size:11.5px;color:var(--saffron);letter-spacing:0.06em;margin-bottom:8px;}
+.darshana-card p{font-size:13.5px;color:var(--text-faint);line-height:1.65;}
+@media(max-width:900px){.darshana-grid{grid-template-columns:1fr;}}
+.footer-nav{display:flex;justify-content:space-between;align-items:center;margin-top:50px;padding-top:24px;border-top:1px solid var(--border);}
+.fn-btn{color:var(--gold);text-decoration:none;font-size:14px;cursor:pointer;font-family:'Cinzel';letter-spacing:0.04em;}
+.fn-btn:hover{color:var(--gold-bright);}
+.part-badge{font-family:'Cinzel';font-size:10px;letter-spacing:0.18em;text-transform:uppercase;padding:5px 14px;border:1px solid var(--gold);border-radius:3px;color:var(--gold-bright);}
+@media(max-width:860px){.sidebar{position:fixed;left:-280px;transition:left .2s;z-index:50;}.sidebar.open{left:0;}.section{padding:34px 18px 60px;}}
+.menu-toggle{display:none;}
+@media(max-width:860px){.menu-toggle{display:block;position:fixed;bottom:20px;right:20px;z-index:60;width:46px;height:46px;border-radius:50%;background:var(--crimson);color:var(--cream);border:none;font-size:20px;cursor:pointer;}}
+</style>
+</head>
+<body>
+<div class="app">
+<nav class="sidebar" id="sidebar">
+  <div class="brand">
+    <span class="om dn">ॐ</span>
+    <h1>शास्त्रोद्भवः<br><span style="font-size:11px;color:var(--text-dim);font-weight:400;">The Birth &amp; Evolution of the Śāstras</span></h1>
+    <p>culturalmusings.com · shabdabrahman companion</p>
+  </div>
+  <div class="navgroup">
+    <div class="label">भाग २ · Part II Contents</div>
+    <a class="navlink" data-target="s-p2intro">काललक्षणम् · The Classical Age</a>
+    <a class="navlink" data-target="s-panini">पाणिनिः · Pāṇini &amp; Vyākaraṇa</a>
+    <a class="navlink" data-target="s-darshanas">षड्दर्शनानि · The Six Darśanas</a>
+    <a class="navlink" data-target="s-mimamsa">मीमांसा · Mīmāṃsā &amp; Vedānta</a>
+    <a class="navlink" data-target="s-dharmashastra">धर्मशास्त्र · Dharmaśāstra</a>
+    <a class="navlink" data-target="s-arthashastra">अर्थशास्त्र · Kauṭilya</a>
+    <a class="navlink" data-target="s-ayurveda">आयुर्वेद · Medical Śāstra</a>
+    <a class="navlink" data-target="s-natyashastra">नाट्यशास्त्र · Bharata Muni</a>
+    <a class="navlink" data-target="s-chronotable2">कालक्रम II · Chronology</a>
+    <a class="navlink" data-target="s-summary2">सारः · Summary</a>
+  </div>
+  <div class="series-nav">
+    <div class="sn-label">पञ्चभागाः · Five‑Part Series</div>
+    <a href="shastra-series-part1.html">Part I · Origins &amp; Vedic Śāstras</a>
+    <a href="shastra-series-part2.html" class="current">Part II · Classical Śāstras (600 BCE–300 CE)</a>
+    <a href="shastra-series-part3.html">Part III · Tantric &amp; Āgamic Śāstras</a>
+    <a href="shastra-series-part4.html">Part IV · Medieval Synthesis (900–1700 CE)</a>
+    <a href="shastra-series-part5.html">Part V · Modern Continuity</a>
+  </div>
+</nav>
+
+<main class="main">
+<div class="breadcrumb">
+  culturalmusings.com <span style="color:var(--border)">/</span> शास्त्रोद्भवः <span style="color:var(--border)">/</span>
+  <span class="cur" id="crumb">काललक्षणम्</span>
+</div>
+<div class="tabbar" id="tabbar">
+  <button class="tabbtn" data-target="s-p2intro">काललक्षण</button>
+  <button class="tabbtn" data-target="s-panini">पाणिनि</button>
+  <button class="tabbtn" data-target="s-darshanas">षड्दर्शन</button>
+  <button class="tabbtn" data-target="s-mimamsa">मीमांसा</button>
+  <button class="tabbtn" data-target="s-dharmashastra">धर्मशास्त्र</button>
+  <button class="tabbtn" data-target="s-arthashastra">अर्थशास्त्र</button>
+  <button class="tabbtn" data-target="s-ayurveda">आयुर्वेद</button>
+  <button class="tabbtn" data-target="s-natyashastra">नाट्यशास्त्र</button>
+  <button class="tabbtn" data-target="s-chronotable2">कालक्रम II</button>
+  <button class="tabbtn" data-target="s-summary2">सारः</button>
+</div>
+
+<div id="sections-root">
+
+<!-- ═══ P2 INTRO ═══ -->
+<section class="section" id="s-p2intro">
+  <div class="eyebrow">भाग २ · Part II of V &nbsp;·&nbsp; The Classical Age</div>
+  <h2 class="title"><span class="dn">शास्त्राणां सौवर्णयुगम्</span>The Classical Age — When Every Discipline Reached its Formal Apex</h2>
+  <p class="lede">Between approximately 600 BCE and 300 CE, the Sanskrit śāstric tradition underwent its most explosive expansion. In this period, every major domain of knowledge received its canonical treatment — grammar by Pāṇini, philosophy by the six darśana founders, jurisprudence by Manu and Yājñavalkya, medicine by Caraka and Suśruta, political economy by Kauṭilya, and aesthetics by Bharata. These texts are not superseded foundations; they remain the authoritative standards of their disciplines today.</p>
+
+  <div class="callout">
+    <div class="cl-head">The Classical Period's Defining Characteristic</div>
+    <p style="font-size:15.5px;">What defines the classical period is not simply the production of great texts, but the achievement of a specific intellectual standard: the <em>systematic completeness</em> that allows a śāstra to function as a generative, self-contained formal system rather than a collection of useful rules. Pāṇini's grammar can generate every valid Sanskrit form from its rules without recourse to outside information; Caraka's medical system can approach any patient from its internal theoretical framework; Bharata's Nāṭyaśāstra can evaluate any performance against its own criteria. This formal self-sufficiency is the hallmark of the classical śāstra.</p>
+  </div>
+
+  <div class="panel">
+    <h3>The Intellectual Context: Buddhism, Jainism, and the Debate Culture</h3>
+    <p>The classical period also coincides with the rise of Buddhism (Gautama Buddha, c. 5th century BCE) and Jainism as systematic philosophical movements offering explicit alternatives to the Vedic framework. This is not coincidence — the competitive intellectual environment created by the presence of non-Vedic traditions forced the Vedic śāstric tradition to sharpen its tools, develop explicit logic (Nyāya) and epistemology (pramāṇa theory), and articulate its positions with a precision and explicitness that pure intra-Vedic commentary had never required.</p>
+    <p>Much of the analytical philosophy developed in the Nyāya-Vaiśeṣika tradition — category theory, inference rules, the analysis of perception and testimony — was developed partly in direct dialogue with Buddhist epistemologists like Dignāga and Dharmakīrti. The classical period is the first great age of Indian inter-traditional philosophical debate, and the śāstras it produced bear the mark of that sharpening.</p>
+  </div>
+
+  <div class="footer-nav">
+    <span class="part-badge">Part II · Classical</span>
+    <span class="fn-btn" onclick="showSection('s-panini')">Next: पाणिनिः →</span>
+  </div>
+</section>
+
+<!-- ═══ PANINI ═══ -->
+<section class="section hidden" id="s-panini">
+  <div class="eyebrow">अध्यायः १ · The Pinnacle of Vyākaraṇa</div>
+  <h2 class="title"><span class="dn">अष्टाध्यायी</span>Pāṇini's Aṣṭādhyāyī — The Most Perfect Grammar Ever Written</h2>
+  <p class="lede">Around the 4th century BCE, a scholar from Śalātura (near modern Attock in Pakistan) composed a grammar of Sanskrit so formally complete that it has not been superseded in 2,400 years. The Aṣṭādhyāyī is both the apex of the Vedāṅga tradition and the founding document of formal generative grammar in any language.</p>
+
+  <div class="panel">
+    <h3>The Formal Structure: 3,976 Sūtras in Eight Chapters</h3>
+    <p>The Aṣṭādhyāyī ("Eight Chapters") contains exactly 3,976 sūtras — aphoristic rules of extraordinary compactness. The entire grammar is so tightly compressed that the full work, when memorised (as students traditionally did), is shorter than a typical chapter of a modern linguistics paper, yet sufficient to generate every valid Sanskrit form. Key features:</p>
+    <table class="chron">
+      <tr><th>Feature</th><th>Description</th><th>Modern Parallel</th></tr>
+      <tr><td class="shastra">Śivasūtras</td><td>14 auxiliary lists of phonemes arranged in a specific order, prefixed to the grammar, enabling the pratyāhāra abbreviation system (see Śabda-Brahman Ch.17)</td><td>Minimal perfect hash function over the phoneme alphabet</td></tr>
+      <tr><td class="shastra">Pratyāhāras</td><td>Two-letter codes naming any contiguous span of the Śivasūtra phoneme list</td><td>Pointer arithmetic over a fixed indexed array</td></tr>
+      <tr><td class="shastra">Anuvṛtti</td><td>Rule inheritance — elements of earlier sūtras carry over implicitly into later ones without restating</td><td>Object-oriented inheritance / scope rules</td></tr>
+      <tr><td class="shastra">Meta-rules (paribhāṣās)</td><td>Rules about how to apply rules — conflict resolution, ordering principles</td><td>Metaprogramming / operator precedence</td></tr>
+      <tr><td class="shastra">Zero-morpheme analysis</td><td>Pāṇini posits "zero" morphemes to handle irregular forms within a unified rule system</td><td>Null symbols in formal grammars</td></tr>
+    </table>
+  </div>
+
+  <div class="grid2">
+    <div class="panel">
+      <h3>The Grammatical Tradition Pāṇini Inherited and Replaced</h3>
+      <p>Pāṇini did not work in a vacuum — he names 64 predecessor grammarians in his sūtras (including Śākaṭāyana and Śākalya), whose systems he subsumes or corrects. This confirms that Sanskrit grammar had been a productive śāstric enterprise for at least two centuries before Pāṇini. His work achieves what none of his predecessors had: a <em>closed</em> system — one from which no valid Sanskrit form falls out and into which no invalid form can be generated, at least in principle.</p>
+      <p>The three principal commentaries that together constitute the authoritative interpretation of Pāṇini:</p>
+      <ul style="padding-left:18px;font-size:15px;line-height:2;">
+        <li><strong>Kātyāyana's Vārttika</strong> (~3rd century BCE): supplements and corrections to individual sūtras</li>
+        <li><strong>Patañjali's Mahābhāṣya</strong> (~2nd century BCE): the authoritative commentary on the Vārttika, itself a philosophical masterpiece of argument about the nature of language, meaning, and the sphoṭa (see Bhartṛhari)</li>
+        <li><strong>Bhartṛhari's Vākyapadīya</strong> (~5th century CE): the philosophical synthesis connecting Pāṇinian grammar to the doctrine of Śabda-Brahman discussed in Part I of the companion resource</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Why Pāṇini's Grammar Matters Beyond Sanskrit</h3>
+      <p>The Aṣṭādhyāyī is regularly cited in the history of linguistics as the first context-sensitive generative grammar — a formal system of the kind that Western linguistics rediscovered only in the 20th century (Chomsky's transformational generative grammar, 1957). The specific features that make it technically remarkable by modern standards:</p>
+      <ul style="padding-left:18px;font-size:15px;line-height:2;">
+        <li>Rule ordering — the output of one rule feeds the next in a defined sequence</li>
+        <li>Context-sensitive rules — some rules apply only when a specific adjacent context is present</li>
+        <li>Abstract underlying representations — Pāṇini posits intermediate, unrealised forms that undergo further rules before surface output</li>
+        <li>Metalanguage distinction — the grammar distinguishes between the language it describes (Sanskrit) and the language it uses to do the describing (a technical metalanguage of markers, abbreviations, and operators)</li>
+      </ul>
+      <p style="font-size:14.5px;color:var(--text-faint);">Sanskrit's status as the language that received this level of formal analysis first is directly relevant to why the mātṛkā tradition of the Śabda-Brahman resource could make the claims it makes: a language that had been subjected to such intense formal analysis for two millennia develops a completely different relationship to its own phoneme inventory than any language that has not.</p>
+    </div>
+  </div>
+
+  <div class="footer-nav">
+    <span class="fn-btn" onclick="showSection('s-p2intro')">← काललक्षणम्</span>
+    <span class="fn-btn" onclick="showSection('s-darshanas')">Next: षड्दर्शन →</span>
+  </div>
+</section>
+
+<!-- ═══ DARSHANAS ═══ -->
+<section class="section hidden" id="s-darshanas">
+  <div class="eyebrow">अध्यायः २ · The Philosophical Śāstras</div>
+  <h2 class="title"><span class="dn">षड्दर्शनानि</span>The Six Darśanas — The Philosophical Śāstras</h2>
+  <p class="lede">The six āstika (Veda-affirming) darśanas — literally "viewpoints" or "systems of seeing" — represent the classical period's most sustained exercise in systematic philosophy. Each is a complete, internally consistent world-view, each addresses the same fundamental questions from a distinct methodological starting point, and each is still a living tradition of philosophical engagement.</p>
+
+  <div class="darshana-grid">
+    <div class="darshana-card">
+      <span class="dc-dn">न्यायः</span>
+      <div class="dc-name">Nyāya</div>
+      <div class="dc-pair">Paired with Vaiśeṣika · Founded by Gautama (Akṣapāda)</div>
+      <p>Logic and epistemology. Pramāṇa (valid means of knowledge): perception, inference, comparison, testimony. The primary anti-sceptical, realist tradition. Its anumāna (inference) theory is the most systematically developed logic in pre-modern India.</p>
+    </div>
+    <div class="darshana-card">
+      <span class="dc-dn">वैशेषिकम्</span>
+      <div class="dc-name">Vaiśeṣika</div>
+      <div class="dc-pair">Paired with Nyāya · Founded by Kaṇāda</div>
+      <p>Ontology and category theory. Nine categories (padārthas): substance, quality, action, universal, particular, inherence, and non-existence. A systematic atomic theory of material reality, paired with Nyāya's epistemology.</p>
+    </div>
+    <div class="darshana-card">
+      <span class="dc-dn">सांख्यम्</span>
+      <div class="dc-name">Sāṃkhya</div>
+      <div class="dc-pair">Paired with Yoga · Founded by Kapila</div>
+      <p>The oldest systematic Indian philosophy; 25-tattva dualism of Puruṣa (pure consciousness) and Prakṛti (primary matter). Three guṇas (sattva, rajas, tamas). Direct ancestor of Āyurveda's theoretical framework.</p>
+    </div>
+    <div class="darshana-card">
+      <span class="dc-dn">योगः</span>
+      <div class="dc-name">Yoga</div>
+      <div class="dc-pair">Paired with Sāṃkhya · Founded by Patañjali</div>
+      <p>The methodological and practical counterpart to Sāṃkhya's metaphysics. Patañjali's Yogasūtras (c. 2nd century BCE – 4th century CE) systematise the eight-limbed path (aṣṭāṅga) toward citta-vṛtti-nirodha (cessation of mental fluctuations).</p>
+    </div>
+    <div class="darshana-card">
+      <span class="dc-dn">मीमांसा</span>
+      <div class="dc-name">Pūrva Mīmāṃsā</div>
+      <div class="dc-pair">Paired with Vedānta · Founded by Jaimini</div>
+      <p>Interpretation of the Vedic ritual injunctions; developed the most sophisticated hermeneutic theory of the ancient world. Jaimini's Mīmāṃsāsūtras establish the rules for interpreting textual authority — directly generative of later Dharmaśāstra methodology.</p>
+    </div>
+    <div class="darshana-card">
+      <span class="dc-dn">वेदान्तः</span>
+      <div class="dc-name">Uttara Mīmāṃsā / Vedānta</div>
+      <div class="dc-pair">Paired with Mīmāṃsā · Founded on Bādarāyaṇa's Brahmasūtras</div>
+      <p>The metaphysics of the Upaniṣads systematised into 555 sūtras by Bādarāyaṇa. Will later branch into Śaṅkara's Advaita, Rāmānuja's Viśiṣṭādvaita, and Madhva's Dvaita — the three great schools of Vedānta still active today.</p>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h3>The Three Principal Texts (Prasthānatrayī) of Vedānta</h3>
+    <p>The classical Vedānta tradition recognises a canonical triad of texts that all major Vedānta āchāryas must comment upon to establish their school's legitimacy:</p>
+    <table class="chron">
+      <tr><th>Text</th><th>Date</th><th>Content</th><th>Role</th></tr>
+      <tr><td class="shastra">Upaniṣads</td><td class="era">~800–300 BCE</td><td>Principal 10–13 Upaniṣads (Bṛhadāraṇyaka, Chāndogya, Taittirīya, Aitareya, Kaṭha, Praśna, Muṇḍaka, Māṇḍūkya, Kena, Īśā)</td><td class="note">Śruti — the revealed content that Vedānta systematises</td></tr>
+      <tr><td class="shastra">Brahmasūtras (Vedāntasūtras)</td><td class="era">~400–200 BCE</td><td>555 aphoristic sūtras by Bādarāyaṇa reconciling apparent Upaniṣadic inconsistencies</td><td class="note">Nyāya prasthāna — the logical ordering of Vedāntic teaching</td></tr>
+      <tr><td class="shastra">Bhagavadgītā</td><td class="era">~400–200 BCE (within the Mahābhārata)</td><td>18 chapters, 700 verses — the practical/devotional synthesis of Sāṃkhya, Yoga, and Vedānta</td><td class="note">Smṛti prasthāna — the devotional and ethical synthesis of Vedāntic philosophy</td></tr>
+    </table>
+  </div>
+
+  <div class="footer-nav">
+    <span class="fn-btn" onclick="showSection('s-panini')">← पाणिनिः</span>
+    <span class="fn-btn" onclick="showSection('s-mimamsa')">Next: मीमांसा →</span>
+  </div>
+</section>
+
+<!-- ═══ MIMAMSA ═══ -->
+<section class="section hidden" id="s-mimamsa">
+  <div class="eyebrow">अध्यायः ३ · Hermeneutic &amp; Metaphysical Śāstras</div>
+  <h2 class="title"><span class="dn">मीमांसाविचारः</span>Mīmāṃsā and Vedānta — Interpreting and Transcending the Veda</h2>
+  <p class="lede">The Mīmāṃsā and Vedānta darśanas occupy opposite ends of a spectrum: Mīmāṃsā begins with the ritual injunctions of the Veda and extracts from them a complete theory of language, meaning, and obligation; Vedānta begins with the philosophical conclusions of the Upaniṣads and extracts from them a complete metaphysics of consciousness.</p>
+
+  <div class="grid2">
+    <div class="panel">
+      <h3>Jaimini's Mīmāṃsāsūtras (~3rd century BCE)</h3>
+      <p>Jaimini's 2,745 sūtras establish the <span class="iast">Pūrva Mīmāṃsā</span> (earlier/prior investigation) as the śāstric discipline of Vedic interpretation. Its central question: given that the Veda contains injunctions commanding specific actions (sacrifices, rites, prohibitions), how should those injunctions be correctly interpreted when they appear ambiguous, incomplete, or apparently contradictory?</p>
+      <p>The twelve chapters of Jaimini's work develop twelve principles of interpretation — most critically the distinction between <span class="iast">vidhi</span> (direct injunction), <span class="iast">arthavāda</span> (explanatory praise/narrative passages — not literally binding), and <span class="iast">nāmasūtra</span> (name-formulas). This tripartite classification of Vedic sentences directly generated the entire later tradition of Indian hermeneutics, including the commentary tradition on Dharmaśāstra texts.</p>
+      <blockquote>
+        कोदण्डधारा मीमांसा अर्थशक्त्यविभाजनात् ।
+        <cite>"Mīmāṃsā is the bow that separates the force of meaning [from the mere word]." — Traditional characterisation</cite>
+      </blockquote>
+    </div>
+    <div class="panel">
+      <h3>Bādarāyaṇa's Brahmasūtras (~400–200 BCE)</h3>
+      <p>If Jaimini asks "what do the Vedic texts tell us to do?", Bādarāyaṇa's 555 sūtras ask "what do the Vedic texts tell us to know?" The Brahmasūtras (<span class="iast">Vedāntasūtras</span>) are structured as a systematic response to every apparent inconsistency or contradiction within the Upaniṣadic corpus, arguing that all principal Upaniṣads teach the same single conclusion: Brahman alone is real, Brahman is the cause and inner controller of the universe, and the individual self (jīva) is ultimately identical with or dependent on Brahman.</p>
+      <p>Because the Brahmasūtras themselves are intentionally terse — often more opaque than the Upaniṣads they systematise — they required lengthy commentary for intelligibility. This generated the three greatest Vedānta commentarial projects:</p>
+      <table class="chron">
+        <tr><th>Commentator</th><th>Date</th><th>School</th><th>Central Thesis</th></tr>
+        <tr><td class="shastra">Śaṅkarācārya</td><td class="era">788–820 CE</td><td>Advaita Vedānta</td><td class="note">Complete non-dualism: Brahman alone is real; the apparent multiplicity of selves and world is māyā (superimposition). Brahman is nirguṇa (without qualities). Liberation = recognition of identity with Brahman.</td></tr>
+        <tr><td class="shastra">Rāmānujācārya</td><td class="era">1017–1137 CE</td><td>Viśiṣṭādvaita</td><td class="note">Qualified non-dualism: Brahman is real but internally differentiated — individual selves and the material world are Brahman's own body (śarīra). Brahman is saguṇa (with qualities = Viṣṇu).</td></tr>
+        <tr><td class="shastra">Madhvācārya</td><td class="era">1238–1317 CE</td><td>Dvaita Vedānta</td><td class="note">Strict dualism: Brahman (Viṣṇu) and individual selves are genuinely different; liberation is the eternal, blissful proximity to Viṣṇu, not identity with him.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="footer-nav">
+    <span class="fn-btn" onclick="showSection('s-darshanas')">← षड्दर्शन</span>
+    <span class="fn-btn" onclick="showSection('s-dharmashastra')">Next: धर्मशास्त्र →</span>
+  </div>
+</section>
+
+<!-- ═══ DHARMASHASTRA ═══ -->
+<section class="section hidden" id="s-dharmashastra">
+  <div class="eyebrow">अध्यायः ४ · Legal Śāstra</div>
+  <h2 class="title"><span class="dn">धर्मशास्त्रम्</span>Dharmaśāstra — The Systematisation of Law</h2>
+  <p class="lede">The Dharma Sūtras of Part I evolved, in the classical period, into the Dharmaśāstras — verse texts of far greater scope, systematic organisation, and social reach, becoming the closest analogue India produced to a codified legal system.</p>
+
+  <div class="panel">
+    <h3>The Major Dharmaśāstra Texts</h3>
+    <table class="chron">
+      <tr><th>Text</th><th>Date</th><th>Scale</th><th>Distinctive Contribution</th></tr>
+      <tr>
+        <td class="shastra">Manusmṛti (Mānava Dharmaśāstra)</td>
+        <td class="era">~200 BCE – 200 CE</td>
+        <td>12 chapters, ~2,700 verses</td>
+        <td class="note">The most cited and most debated Dharmaśāstra; covers the entire varṇāśrama system, king's duties, civil and criminal procedure, women's rights and duties, and cosmological theory of dharma. Its authority was actively contested even in antiquity; later commentators spent enormous energy qualifying its more extreme provisions.</td>
+      </tr>
+      <tr>
+        <td class="shastra">Yājñavalkyasmṛti</td>
+        <td class="era">~1st–3rd century CE</td>
+        <td>3 chapters, ~1,010 verses</td>
+        <td class="note">More systematic and concise than Manu; its threefold organisation (ācāra, vyavahāra, prāyaścitta — conduct, legal procedure, expiation) became the standard template for later Dharmaśāstra commentaries. Vijñāneśvara's 12th-century commentary, the Mitākṣarā, made this the basis of Hindu law across most of India.</td>
+      </tr>
+      <tr>
+        <td class="shastra">Nāradasmṛti</td>
+        <td class="era">~1st–4th century CE</td>
+        <td>Focused on vyavahāra (civil/commercial law)</td>
+        <td class="note">The most purely legal of the major smṛtis; remarkable for its procedural sophistication, treatment of commercial contracts, debt, and evidence — the closest any classical Dharmaśāstra comes to purely secular legal analysis.</td>
+      </tr>
+      <tr>
+        <td class="shastra">Parāśarasmṛti</td>
+        <td class="era">~4th–6th century CE (traditional: primordial)</td>
+        <td>12 chapters</td>
+        <td class="note">Later tradition held that different smṛtis were authoritative for different yugas; Parāśara's text was designated especially authoritative for the Kali Yuga — the current age — giving it a special status in later practical application of Dharmaśāstra.</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="grid2">
+    <div class="panel">
+      <h3>The Commentatorial Tradition on Dharmaśāstra</h3>
+      <p>The Dharmaśāstra tradition's most intellectually sophisticated products are not the root texts themselves but the great medieval commentaries that interpret, reconcile, and qualify them. Key commentaries:</p>
+      <ul style="padding-left:18px;font-size:15px;line-height:2;">
+        <li><strong>Medhātithi on Manu</strong> (~9th century CE): the most comprehensive and philosophically sophisticated commentary on the Manusmṛti; frequently departs from Manu's literal meaning in favour of a more equitable interpretation</li>
+        <li><strong>Vijñāneśvara's Mitākṣarā on Yājñavalkya</strong> (1120 CE): basis of Hindu property and inheritance law across most of pre-colonial India; its analysis of joint family property was directly invoked by British colonial courts</li>
+        <li><strong>Jīmūtavāhana's Dāyabhāga</strong> (Bengal, 12th century): a competing inheritance system; governed Bengal and Assam; still an operative distinction in Indian personal law</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>The Nibandha Literature — Digest Compilations</h3>
+      <p>From about the 10th century onward, a further genre of Dharmaśāstric writing emerged: the <span class="iast">nibandha</span> ("digest") — encyclopaedic compilations drawing together the opinions of all preceding smṛtis and commentators on a given topic, and adjudicating between them. The great nibandhakāras include Hemādri (13th century, Deccan), Raghunandana (16th century, Bengal), and Kamalākarabhaṭṭa (17th century, Maharashtra). These texts are effectively the law-review journals of pre-modern India — systematically presenting the state of jurisprudential opinion on each question at the time of composition.</p>
+      <p style="font-size:14.5px;color:var(--text-faint);">The nibandha tradition runs continuously from the 10th century to 1947, when British India's independence and the Hindu Code Bills began replacing smṛti-based personal law with statute — though smṛti remains constitutionally relevant in some domains of Hindu personal law to this day.</p>
+    </div>
+  </div>
+
+  <div class="footer-nav">
+    <span class="fn-btn" onclick="showSection('s-mimamsa')">← मीमांसा</span>
+    <span class="fn-btn" onclick="showSection('s-arthashastra')">Next: अर्थशास्त्र →</span>
+  </div>
+</section>
+
+<!-- ═══ ARTHASHASTRA ═══ -->
+<section class="section hidden" id="s-arthashastra">
+  <div class="eyebrow">अध्यायः ५ · Political Śāstra</div>
+  <h2 class="title"><span class="dn">अर्थशास्त्रम्</span>Kauṭilya's Arthaśāstra — The Science of Political Economy</h2>
+  <p class="lede">Composed around the 4th–3rd century BCE (attributed to Cāṇakya, also known as Kauṭilya, the minister of Candragupta Maurya), the Arthaśāstra is the most sophisticated and realistic political treatise produced in the ancient world — predating Machiavelli's Discourses by 1,700 years, and far surpassing them in systematic completeness.</p>
+
+  <div class="panel">
+    <h3>The Arthaśāstra's Scope — 15 Books, 150 Chapters</h3>
+    <table class="chron">
+      <tr><th>Books</th><th>Topics Covered</th><th>Modern Equivalents</th></tr>
+      <tr><td class="shastra">I–V</td><td>King's personal discipline, organisation of ministers and officers, secret service, treasury and revenue</td><td>Constitutional law, intelligence agencies, public finance</td></tr>
+      <tr><td class="shastra">VI–IX</td><td>Foreign policy (the Maṇḍala theory of concentric allies and enemies), warfare strategy, siege warfare</td><td>International relations, military strategy</td></tr>
+      <tr><td class="shastra">X–XIII</td><td>Organisation of the army, intelligence operations in enemy territory, siege warfare in detail</td><td>Military logistics, special operations</td></tr>
+      <tr><td class="shastra">XIV–XV</td><td>Secret means (Sorcery, occult operations — covert psychological operations); summary methodological statement</td><td>Psychological operations, propaganda</td></tr>
+    </table>
+    <p style="font-size:14.5px;color:var(--text-faint);">The Arthaśāstra was "lost" to the scholarly record after approximately 1200 CE and recovered only in 1905 when a manuscript was discovered in Mysore. Its rediscovery transformed the understanding of Mauryan governance and Kauṭilya's place in the history of political thought.</p>
+  </div>
+
+  <div class="panel">
+    <h3>Kauṭilya's Method — Comparative Citation as Śāstric Rigour</h3>
+    <p>One of the Arthaśāstra's most remarkable features is that Kauṭilya systematically cites and responds to the views of predecessor ācāryas (including Manu, Uśanas/Śukra, Bṛhaspati, and others) before stating his own position — demonstrating that political science, like grammar, dharmaśāstra, and medicine, was already a tradition of professional debate with multiple competing schools rather than a single authoritative text. Kauṭilya's famous self-characterisation captures the śāstric method precisely:</p>
+    <blockquote>
+      ग्रन्थस्यार्थं ग्रन्थान्तरेण साधयेत् ।<br>
+      एकं शास्त्रमधीयानो न शास्त्रार्थं विजानीयात् ॥
+      <cite>"One who studies only one śāstra does not understand the purpose of the śāstra. The meaning of one text is to be established by means of other texts." — Arthaśāstra 15.1 (paraphrased)</cite>
+    </blockquote>
+  </div>
+
+  <div class="footer-nav">
+    <span class="fn-btn" onclick="showSection('s-dharmashastra')">← धर्मशास्त्र</span>
+    <span class="fn-btn" onclick="showSection('s-ayurveda')">Next: आयुर्वेद →</span>
+  </div>
+</section>
+
+<!-- ═══ AYURVEDA ═══ -->
+<section class="section hidden" id="s-ayurveda">
+  <div class="eyebrow">अध्यायः ६ · Medical Śāstra</div>
+  <h2 class="title"><span class="dn">आयुर्वेदः</span>Āyurveda — The Science of Life</h2>
+  <p class="lede">Āyurveda (the "knowledge of life") is the Upaveda of the Atharvaveda — the medical tradition that grew from the healing hymns and plant-lore of the Atharvan priests into one of the world's first systematic medical sciences, with two canonical textual summits in the Carakasaṁhitā and Suśrutasaṁhitā.</p>
+
+  <div class="panel">
+    <h3>The Theoretical Foundation: Sāṃkhya Tattvas in the Body</h3>
+    <p>Āyurveda's theoretical framework is built explicitly on Sāṃkhya metaphysics: the five great elements (pañcamahābhūtas — earth, water, fire, air, space), their combinations in the three doṣas (Vāta/air-space, Pitta/fire-water, Kapha/earth-water), the seven dhātus (body tissues), and the three malas (waste products). This is not folk medicine decorated with philosophical language but a consistent, internally coherent theoretical system that allows practitioners to reason from first principles about pathology, pharmacology, and treatment — exactly the quality that distinguishes a śāstra from a mere collection of remedies.</p>
+  </div>
+
+  <div class="grid2">
+    <div class="panel">
+      <h3>Carakasaṁhitā (~1st–2nd century CE; root text older)</h3>
+      <p>The most comprehensive theoretical medical śāstra; associated with Caraka (possibly a redactor of an older text by Agniveśa, a student of the legendary Ātreya). Organised in eight sthānas (divisions) covering:</p>
+      <ul style="padding-left:18px;font-size:15px;line-height:1.9;">
+        <li><strong>Sūtrasthāna</strong>: general principles, pharmacology, clinical logic</li>
+        <li><strong>Nidānasthāna</strong>: aetiology and pathology of major diseases</li>
+        <li><strong>Vimānasthāna</strong>: epistemology of medicine — how the doctor knows</li>
+        <li><strong>Śārīrasthāna</strong>: embryology, anatomy, and constitutional theory</li>
+        <li><strong>Indriyasthāna</strong>: prognosis from sensory signs</li>
+        <li><strong>Cikitsāsthāna</strong>: treatment of 30 major diseases in detail</li>
+        <li><strong>Kalpasthāna &amp; Siddhisthāna</strong>: pharmacy and therapeutic protocols</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Suśrutasaṁhitā (~3rd–4th century CE; core older)</h3>
+      <p>The surgical complement to Caraka's medical emphasis; associated with Suśruta, a student of the legendary Divodāsa (Dhanvantari). Its contributions to surgical śāstra are unique in the ancient world:</p>
+      <ul style="padding-left:18px;font-size:15px;line-height:1.9;">
+        <li>Description of 101 surgical instruments and their use</li>
+        <li>Eight categories of surgical procedures (chedana, bhedana, lekkhana, etc.)</li>
+        <li>Rhinoplasty (reconstruction of the nose using cheek tissue) — the oldest documented plastic surgery procedure in any tradition</li>
+        <li>Cataract couching as an ophthalmic procedure</li>
+        <li>Classification of 1,120 diseases and 700 medicinal plants</li>
+        <li>The earliest known dissection requirement for medical education</li>
+      </ul>
+      <p style="font-size:14.5px;color:var(--text-faint);">Suśruta's surgical techniques reached the Arab world via translations into Arabic (8th century CE), and from there influenced European surgery — making Āyurveda one of the few classical Indian śāstras with direct, traceable influence on Western medical history.</p>
+    </div>
+  </div>
+
+  <div class="footer-nav">
+    <span class="fn-btn" onclick="showSection('s-arthashastra')">← अर्थशास्त्र</span>
+    <span class="fn-btn" onclick="showSection('s-natyashastra')">Next: नाट्यशास्त्र →</span>
+  </div>
+</section>
+
+<!-- ═══ NATYASHASTRA ═══ -->
+<section class="section hidden" id="s-natyashastra">
+  <div class="eyebrow">अध्यायः ७ · Aesthetic Śāstra</div>
+  <h2 class="title"><span class="dn">नाट्यशास्त्रम्</span>Bharata's Nāṭyaśāstra — The Science of Aesthetic Experience</h2>
+  <p class="lede">The Nāṭyaśāstra (~2nd century BCE – 2nd century CE, 36 chapters, ~6,000 verses) is at once the classical period's most ambitious single śāstra and its most unusual: it treats the performing arts not as entertainment but as a complete technology for the reliable production of a specific psychological-spiritual state (rasa) in a defined population (the audience). This makes it simultaneously a work of poetics, musicology, kinesiology, architecture, and philosophy — and the governing theoretical text of the Śabda-Brahman companion resource's Chapters 6–9.</p>
+
+  <div class="panel">
+    <h3>The Nāṭyaśāstra in the Śāstra Tradition</h3>
+    <p>The Nāṭyaśāstra holds a peculiar position in the śāstric canon: it is a technical śāstra (systematic, rule-based, exhaustive) applied to a domain — aesthetic experience — that the Vedic tradition had not previously systematised. Its opening chapters claim the text as the "Fifth Veda," drawing pāṭhya from the Ṛgveda, gīta from the Sāmaveda, abhinaya from the Yajurveda, and rasa from the Atharvaveda — a rhetorical move that places it within the Vedāṅga tradition while also exceeding it.</p>
+    <p>In its thirty-six chapters, the Nāṭyaśāstra covers: stage architecture (nāṭyamaṇḍapa), voice production, dance grammar (108 karaṇas, 32 cārīs, 67 hastās), the eight primary rasas and thirty-three sthāyibhāvas, the vṛtti system, tonal theory (22 śrutis, 7 svaras), melodic modes (jātis — ancestor of rāga), rhythm (tāla), dramatic structure (the five sandhi / plot junctures), costume, makeup, actor training, and the theory of text composition. There is no comparable synthesis of aesthetic theory, technical instruction, and philosophical framing in any other ancient culture's literature.</p>
+  </div>
+
+  <div class="grid2">
+    <div class="panel">
+      <h3>The Rasa Sūtra — Most Analysed Sentence in Sanskrit</h3>
+      <div class="sanskrit-block" style="font-size:18px;">
+        विभावानुभावव्यभिचारिसंयोगाद् रसनिष्पत्तिः ।
+      </div>
+      <p class="gloss">"Rasa is accomplished from the conjunction of vibhāvas (determinant causes), anubhāvas (consequent responses), and vyabhicāri-bhāvas (transitory emotional states)." — Nāṭyaśāstra 6.31</p>
+      <p style="font-size:15px;">This single sūtra generated more commentary than any other in Sanskrit aesthetic literature; Abhinavagupta's Abhinavabhāratī (c. 1000 CE) alone runs to thousands of pages in its sustained analysis of this formula.</p>
+    </div>
+    <div class="panel">
+      <h3>The Nāṭyaśāstra's Successors</h3>
+      <table class="chron">
+        <tr><th>Text</th><th>Author/Date</th><th>Contribution</th></tr>
+        <tr><td class="shastra">Nāṭyadarpaṇa</td><td>Rāmacandra &amp; Guṇacandra, ~12th c.</td><td class="note">Later systematic reworking of Nāṭyaśāstra for regional theatre</td></tr>
+        <tr><td class="shastra">Sāhityadarpaṇa</td><td>Viśvanātha, ~14th c.</td><td class="note">Extends Nāṭyaśāstric rasa theory to literary poetry (kāvya)</td></tr>
+        <tr><td class="shastra">Abhinava Darpaṇa</td><td>Nandikeśvara, ~10th–12th c.</td><td class="note">Compact hasta-abhinaya manual still used in classical dance training</td></tr>
+        <tr><td class="shastra">Saṅgīta Ratnākara</td><td>Śārṅgadeva, 13th c.</td><td class="note">The Nāṭyaśāstra's musical theory expanded into full Karnatic/Hindustani musicology</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="footer-nav">
+    <span class="fn-btn" onclick="showSection('s-ayurveda')">← आयुर्वेद</span>
+    <span class="fn-btn" onclick="showSection('s-chronotable2')">Next: कालक्रम II →</span>
+  </div>
+</section>
+
+<!-- ═══ CHRONO TABLE 2 ═══ -->
+<section class="section hidden" id="s-chronotable2">
+  <div class="eyebrow">सन्दर्भसारणी · Reference Chronology</div>
+  <h2 class="title"><span class="dn">कालक्रमसारणी २</span>Master Chronology Table — Part II: 600 BCE – 300 CE</h2>
+  <p class="lede">The classical period's definitive textual events in sequence, from Yāska's Nirukta through the completion of the major smṛtis and the composition of the Nāṭyaśāstra.</p>
+
+  <div class="panel">
+    <h3>II. The Classical Śāstra Composition Period (~600 BCE – 300 CE)</h3>
+    <table class="chron">
+      <tr>
+        <th style="width:16%">Date (Approx.)</th>
+        <th style="width:24%">Text / Event</th>
+        <th style="width:16%">Domain</th>
+        <th>Significance</th>
+      </tr>
+      <tr>
+        <td class="era">~600–500 BCE</td>
+        <td class="shastra">Yāska's Nirukta</td>
+        <td><span class="tag gold">Vedāṅga · Etymology</span></td>
+        <td class="note">Oldest surviving named-author Sanskrit śāstric text; founds the Nirukta tradition of etymological analysis. Already debates with earlier authorities, confirming a pre-existing tradition.</td>
+      </tr>
+      <tr>
+        <td class="era">~500–400 BCE</td>
+        <td class="shastra">Piṅgala's Chandaḥśāstra</td>
+        <td><span class="tag gold">Vedāṅga · Metrics</span></td>
+        <td class="note">First systematic theory of all possible Vedic and classical Sanskrit metres; introduces binary notation (light/heavy syllables) and early combinatorial mathematics to enumerate metrical patterns.</td>
+      </tr>
+      <tr>
+        <td class="era">~500–400 BCE</td>
+        <td class="shastra">Kapila's Sāṃkhyakārikā (root tradition)</td>
+        <td><span class="tag indigo">Darśana · Philosophy</span></td>
+        <td class="note">Earliest systematic Indian philosophical school; 25-tattva dualism directly foundational for Āyurveda's three-doṣa theory and for later Yoga philosophy.</td>
+      </tr>
+      <tr>
+        <td class="era">~500–300 BCE</td>
+        <td class="shastra">Early Dharma Sūtras (Āpastamba, Baudhāyana, Gautama)</td>
+        <td><span class="tag jade">Kalpa · Law</span></td>
+        <td class="note">First explicit codification of social law drawing on Vedic authority; establishes the varṇāśrama framework and the conflict-resolution methodology that all later Dharmaśāstra inherits.</td>
+      </tr>
+      <tr>
+        <td class="era">~400 BCE</td>
+        <td class="shastra">Pāṇini's Aṣṭādhyāyī</td>
+        <td><span class="tag gold">Vedāṅga · Grammar</span></td>
+        <td class="note">The single most formally complete śāstric text produced in any culture; still the authoritative grammar of Sanskrit. 3,976 sūtras generating all valid Sanskrit forms. Incorporates and supersedes ~64 predecessor grammarians.</td>
+      </tr>
+      <tr>
+        <td class="era">~400–300 BCE</td>
+        <td class="shastra">Kauṭilya's Arthaśāstra</td>
+        <td><span class="tag jade">Political Science</span></td>
+        <td class="note">The most comprehensive political-economy treatise of the ancient world; 15 books covering governance, diplomacy, military strategy, and covert operations. Lost ~1200 CE; rediscovered 1905.</td>
+      </tr>
+      <tr>
+        <td class="era">~400–200 BCE</td>
+        <td class="shastra">Bādarāyaṇa's Brahmasūtras</td>
+        <td><span class="tag indigo">Darśana · Vedānta</span></td>
+        <td class="note">555 sūtras systematising the Upaniṣadic teaching; the foundational text that all three Vedānta schools (Advaita, Viśiṣṭādvaita, Dvaita) must comment upon.</td>
+      </tr>
+      <tr>
+        <td class="era">~400–200 BCE</td>
+        <td class="shastra">Jaimini's Mīmāṃsāsūtras</td>
+        <td><span class="tag indigo">Darśana · Hermeneutics</span></td>
+        <td class="note">2,745 sūtras establishing the rules for interpreting Vedic injunctions; the foundational hermeneutic methodology for all later Dharmaśāstra commentary.</td>
+      </tr>
+      <tr>
+        <td class="era">~300 BCE</td>
+        <td class="shastra">Kātyāyana's Vārttika on Pāṇini</td>
+        <td><span class="tag gold">Grammar Commentary</span></td>
+        <td class="note">First major commentary on Pāṇini; begins the ongoing tradition of vārttika (supplementary rule) composition that will eventually be systematised in Patañjali's Mahābhāṣya.</td>
+      </tr>
+      <tr>
+        <td class="era">~200–150 BCE</td>
+        <td class="shastra">Patañjali's Mahābhāṣya</td>
+        <td><span class="tag gold">Grammar · Philosophy of Language</span></td>
+        <td class="note">The definitive commentary on Pāṇini-Kātyāyana; also a philosophical masterpiece developing the Sphoṭa theory of meaning — the unity of word-meaning that Bhartṛhari will later connect to Śabda-Brahman.</td>
+      </tr>
+      <tr>
+        <td class="era">~200 BCE – 200 CE</td>
+        <td class="shastra">Manusmṛti</td>
+        <td><span class="tag jade">Dharmaśāstra</span></td>
+        <td class="note">The most comprehensive and most debated Dharmaśāstra; covers the entire range of social obligation, legal procedure, and cosmological framework of dharma. The reference standard for colonial-era codification of Hindu personal law.</td>
+      </tr>
+      <tr>
+        <td class="era">~200 BCE – 200 CE</td>
+        <td class="shastra">Bharata's Nāṭyaśāstra</td>
+        <td><span class="tag veda">Aesthetic Śāstra</span></td>
+        <td class="note">36 chapters; the complete science of theatre, dance, music, and aesthetic experience (rasa theory). Foundation for all subsequent Indian performing-arts theory, directly underpinning the Śabda-Brahman resource's Chapters 6–9.</td>
+      </tr>
+      <tr>
+        <td class="era">~1st–2nd century CE</td>
+        <td class="shastra">Carakasaṁhitā (current redaction by Dṛḍhabala)</td>
+        <td><span class="tag jade">Āyurveda · Medicine</span></td>
+        <td class="note">The foundational internal medicine text of Āyurveda; 8 sthānas covering theory, pathology, epistemology, anatomy, and treatment. Direct application of Sāṃkhya metaphysics to clinical medicine.</td>
+      </tr>
+      <tr>
+        <td class="era">~1st–3rd century CE</td>
+        <td class="shastra">Yājñavalkyasmṛti</td>
+        <td><span class="tag jade">Dharmaśāstra</span></td>
+        <td class="note">More systematic than Manu; its tripartite organisation (conduct, law, expiation) became the standard Dharmaśāstra template. Vijñāneśvara's Mitākṣarā commentary (12th c.) made it the basis of Hindu law across most of India.</td>
+      </tr>
+      <tr>
+        <td class="era">~3rd–4th century CE</td>
+        <td class="shastra">Suśrutasaṁhitā</td>
+        <td><span class="tag jade">Āyurveda · Surgery</span></td>
+        <td class="note">The foundational surgical text; describes 101 instruments, 8 surgical procedures, rhinoplasty, cataract treatment. Oldest documented plastic surgery tradition in any world culture.</td>
+      </tr>
+      <tr>
+        <td class="era">~3rd–4th century CE</td>
+        <td class="shastra">Gauḍapāda's Kārikā on Māṇḍūkya Upaniṣad</td>
+        <td><span class="tag indigo">Vedānta · Advaita</span></td>
+        <td class="note">The first systematic Advaita metaphysical text; Śaṅkara's grand-teacher. Introduces the ajātivāda (doctrine of no-origination) that will be central to mature Advaita.</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="footer-nav">
+    <span class="fn-btn" onclick="showSection('s-natyashastra')">← नाट्यशास्त्र</span>
+    <span class="fn-btn" onclick="showSection('s-summary2')">Next: सारः →</span>
+  </div>
+</section>
+
+<!-- ═══ SUMMARY 2 ═══ -->
+<section class="section hidden" id="s-summary2">
+  <div class="eyebrow">उपसंहारः · Part II Conclusion</div>
+  <h2 class="title"><span class="dn">भागसारः</span>Part II Summary — The Classical Apex</h2>
+  <p class="lede">The classical period established the permanent framework within which all subsequent śāstric development occurs. Every tradition in Part III (Tantric), Part IV (Medieval), and Part V (Modern) defines itself in relation to this canonical layer.</p>
+
+  <div class="grid2">
+    <div class="panel">
+      <h3>The Seven Major Classical Śāstric Domains Established</h3>
+      <table class="chron">
+        <tr><th>Domain</th><th>Canonical Text</th><th>Status Today</th></tr>
+        <tr><td class="shastra">Grammar</td><td>Pāṇini's Aṣṭādhyāyī</td><td class="note">Still the authoritative Sanskrit grammar; studied in every Sanskrit program worldwide</td></tr>
+        <tr><td class="shastra">Philosophy</td><td>Six darśana sūtra texts</td><td class="note">Active philosophical schools; Advaita and Viśiṣṭādvaita still have living institutional traditions</td></tr>
+        <tr><td class="shastra">Jurisprudence</td><td>Manu, Yājñavalkya</td><td class="note">Referenced in Indian personal law debates; directly informing ongoing Hindu Code Bill discussions</td></tr>
+        <tr><td class="shastra">Political Science</td><td>Arthaśāstra</td><td class="note">Actively cited in Indian strategic-studies scholarship since 1950s</td></tr>
+        <tr><td class="shastra">Medicine</td><td>Caraka, Suśruta</td><td class="note">Āyurveda recognised by Indian government; Caraka still foundational in Āyurvedic medical education</td></tr>
+        <tr><td class="shastra">Aesthetics</td><td>Nāṭyaśāstra</td><td class="note">Foundational for Bharatanāṭyam, Kathakaḷi, Odissi, Kūchipūḍi, Manipuri — all classical dance forms</td></tr>
+        <tr><td class="shastra">Astronomy/Mathematics</td><td>Āryabhaṭa (Part III)</td><td class="note">Transition to full mathematical śāstra occurs in late classical / early medieval period</td></tr>
+      </table>
+    </div>
+    <div class="panel">
+      <h3>What Part III Will Show</h3>
+      <p style="font-size:15.5px;">Part III (approximately 300–900 CE) covers the period in which a parallel, distinct body of śāstric literature emerges from the Āgamic and Tantric traditions — texts that claim authority not from the Veda but from direct revelation to specific initiates through divine transmission. This is the period of:</p>
+      <ul style="padding-left:18px;font-size:15.5px;line-height:2;">
+        <li>The Śaiva, Śākta, and Vaiṣṇava Āgamas and Tantras</li>
+        <li>Bhartṛhari's Vākyapadīya — the philosophical bridge between Pāṇinian grammar and Śabda-Brahman theology</li>
+        <li>Aryabhaṭa and the mathematical-astronomical śāstras</li>
+        <li>The first major Purāṇic compilations</li>
+        <li>The Mīmāṃsā-Vedānta debate literature reaching its classical form</li>
+      </ul>
+      <div style="margin-top:16px;"><span class="tag veda">Part II</span><span class="tag gold">Part III →</span></div>
+    </div>
+  </div>
+
+  <div class="footer-nav">
+    <span class="fn-btn" onclick="showSection('s-chronotable2')">← कालक्रम II</span>
+    <a class="fn-btn" href="shastra-series-part3.html">Continue to Part III →</a>
+  </div>
+</section>
+
+</div>
+</main>
+</div>
+<button class="menu-toggle" id="menuToggle">☰</button>
+<script>
+const navlinks=document.querySelectorAll('.navlink');
+const tabbtns=document.querySelectorAll('.tabbtn');
+const sections=document.querySelectorAll('.section');
+const crumb=document.getElementById('crumb');
+function showSection(id){
+  sections.forEach(s=>s.classList.toggle('hidden',s.id!==id));
+  navlinks.forEach(l=>l.classList.toggle('active',l.dataset.target===id));
+  tabbtns.forEach(t=>t.classList.toggle('active',t.dataset.target===id));
+  const activeTab=document.querySelector('.tabbtn[data-target="'+id+'"]');
+  if(activeTab)crumb.textContent=activeTab.textContent;
+  window.scrollTo({top:0,behavior:'smooth'});
+  document.getElementById('sidebar').classList.remove('open');
+  history.replaceState(null,'','#'+id);
+  if(activeTab)activeTab.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'});
+}
+navlinks.forEach(l=>l.addEventListener('click',()=>showSection(l.dataset.target)));
+tabbtns.forEach(t=>t.addEventListener('click',()=>showSection(t.dataset.target)));
+document.getElementById('menuToggle').addEventListener('click',()=>{document.getElementById('sidebar').classList.toggle('open');});
+window.addEventListener('DOMContentLoaded',()=>{const hash=location.hash.replace('#','');showSection(hash&&document.getElementById(hash)?hash:'s-p2intro');});
+</script>
+</body>
+</html>
